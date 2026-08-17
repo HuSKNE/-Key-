@@ -4,55 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Key Generated | Faraz Playz Lag</title>
+
     <style>
-        :root { --bg: #000000; --card: #121212; --text: #ffffff; --accent: #00ff88; --error: #ff4444; }
-        
-        body { 
-            background-color: var(--bg); 
-            color: var(--text); 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            min-height: 100vh; 
-            margin: 0; 
-            padding: 20px;
+        :root {
+            --bg: #000000;
+            --card: #121212;
+            --text: #ffffff;
+            --accent: #00ff88;
+            --error: #ff4444;
+        }
+
+        * {
             box-sizing: border-box;
         }
 
-        .container { 
-            width: 100%; 
-            max-width: 400px; 
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
             text-align: center;
             margin-top: 50px;
         }
 
         /* --- UI Visibility Controls --- */
-        #mainContainer { display: none; }
-        #bypassContainer { display: none; }
+        #mainContainer {
+            display: none;
+        }
+
+        #bypassContainer {
+            display: none;
+        }
 
         /* --- BYPASS ERROR CARD --- */
-        .error-card { 
-            background: #1a0a0a; 
-            border: 1px solid #441111; 
-            border-radius: 28px; 
-            padding: 40px 30px; 
+        .error-card {
+            background: #1a0a0a;
+            border: 1px solid #441111;
+            border-radius: 28px;
+            padding: 40px 30px;
             box-shadow: 0 10px 40px rgba(255,0,0,0.1);
         }
-        .error-icon { font-size: 50px; margin-bottom: 20px; }
-        .error-title { color: var(--error); font-size: 24px; font-weight: bold; margin-bottom: 15px; }
 
-        .key-icon { 
-            background: #1a1a1a; 
-            width: 85px; 
-            height: 85px; 
-            border-radius: 50%; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            margin: -45px auto 15px; 
-            border: 1px solid #333; 
-            overflow: hidden; 
+        .error-icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .error-title {
+            color: var(--error);
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        /* --- LOGO --- */
+        .key-icon {
+            background: #1a1a1a;
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: -45px auto 15px;
+            border: 1px solid #333;
+            overflow: hidden;
             box-shadow: 0 0 25px rgba(0, 255, 136, 0.1);
             position: relative;
             z-index: 10;
@@ -65,186 +91,605 @@
         }
 
         @media (min-width: 768px) {
-            .container { max-width: 450px; }
-            .key-icon { width: 110px; height: 110px; margin: -55px auto 20px; }
+            .container {
+                max-width: 450px;
+            }
+
+            .key-icon {
+                width: 110px;
+                height: 110px;
+                margin: -55px auto 20px;
+            }
         }
 
-        h1 { font-size: 28px; font-weight: bold; margin-bottom: 8px; }
-        .subtitle { color: #888; font-size: 14px; margin-bottom: 30px; }
+        h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
 
-        .card { 
-            background: var(--card); 
-            border: 1px solid #222; 
-            border-radius: 28px; 
-            padding: 40px 30px 30px; 
-            text-align: center; 
-            box-shadow: 0 15px 50px rgba(0,0,0,0.6); 
+        .subtitle {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        /* --- MAIN CARD --- */
+        .card {
+            background: var(--card);
+            border: 1px solid #222;
+            border-radius: 28px;
+            padding: 40px 30px 30px;
+            text-align: center;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.6);
             position: relative;
         }
 
-        h2 { font-size: 22px; margin-bottom: 12px; color: var(--accent); font-weight: 700; }
-        .card-p { color: #999; font-size: 14px; line-height: 1.6; margin-bottom: 25px; }
-
-        .key-box { 
-            background: #000; 
-            padding: 22px; 
-            border-radius: 18px; 
-            border: 1px dashed var(--accent); 
-            margin-bottom: 25px; 
-            position: relative; 
-            overflow: hidden; 
-        }
-        
-        #finalKey { 
-            color: var(--accent); 
-            font-family: 'Courier New', monospace; 
-            font-size: 19px; 
-            font-weight: bold; 
-            letter-spacing: 1px; 
-        }
-        
-        .btn { 
-            width: 100%; 
-            padding: 18px; 
-            background: #ffffff; 
-            color: #000; 
-            border: none; 
-            border-radius: 16px; 
-            font-size: 16px; 
-            font-weight: 800; 
-            cursor: pointer; 
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+        h2 {
+            font-size: 22px;
+            margin-bottom: 12px;
+            color: var(--accent);
+            font-weight: 700;
         }
 
-        .btn:hover { 
-            transform: scale(1.03); 
-            background: var(--accent); 
+        .card-p {
+            color: #999;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        /* --- KEY BOX --- */
+        .key-box {
+            background: #000;
+            padding: 22px;
+            border-radius: 18px;
+            border: 1px dashed var(--accent);
+            margin-bottom: 18px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #finalKey {
+            color: var(--accent);
+            font-family: 'Courier New', monospace;
+            font-size: 19px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            word-break: break-word;
+        }
+
+        /* --- TIMER BOX --- */
+        .timer-box {
+            background: #181818;
+            border: 1px solid #164f39;
+            border-radius: 18px;
+            padding: 17px 10px;
+            margin: 0 0 12px;
+            box-shadow: 0 0 20px rgba(0,255,136,0.08);
+            text-align: center;
+        }
+
+        .timer-title {
+            color: #888;
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+
+        #countdown {
+            color: var(--accent);
+            font-family: 'Courier New', monospace;
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-shadow: 0 0 10px rgba(0,255,136,0.5);
+        }
+
+        /* --- ACTIVE STATUS --- */
+        .key-status {
+            color: var(--accent);
+            font-size: 14px;
+            font-weight: 700;
+            margin: 10px 0 20px;
+            text-shadow: 0 0 8px rgba(0,255,136,0.4);
+        }
+
+        .key-status.expired {
+            color: var(--error);
+            text-shadow: 0 0 8px rgba(255,68,68,0.4);
+        }
+
+        /* --- BUTTON --- */
+        .btn {
+            width: 100%;
+            padding: 18px;
+            background: #ffffff;
+            color: #000;
+            border: none;
+            border-radius: 16px;
+            font-size: 16px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .btn:hover {
+            transform: scale(1.03);
+            background: var(--accent);
             box-shadow: 0 10px 20px rgba(0,255,136,0.2);
         }
 
-        .btn-red { background: var(--error); color: white; margin-top: 20px; }
+        .btn-red {
+            background: var(--error);
+            color: white;
+            margin-top: 20px;
+        }
 
-        .footer { 
-            margin-top: 80px; 
-            color: #333; 
-            font-size: 10px; 
-            letter-spacing: 2px; 
-            text-transform: uppercase; 
-            font-weight: bold; 
+        /* --- FOOTER --- */
+        .footer {
+            margin-top: 80px;
+            color: #333;
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: bold;
         }
     </style>
 </head>
+
 <body>
 
 <div class="container">
+
+    <!-- ================= MAIN CONTAINER ================= -->
     <div id="mainContainer">
+
         <div class="key-icon">
-            <img src="https://github.com/HuSKNE/-Key-/blob/main/assets/logo.png?raw=true"alt="FARAZ">
+            <img
+                src="https://github.com/HuSKNE/-Key-/blob/main/assets/logo.png?raw=true"
+                alt="FARAZ"
+            >
         </div>
 
         <h1>Access Unlocked</h1>
-        <p class="subtitle">Your device-locked license key is ready.</p>
+
+        <p class="subtitle">
+            Your device-locked license key is ready.
+        </p>
 
         <div class="card">
-            <h2>Generation Success!</h2>
-            <p class="card-p">This key is locked to your device. Share it, and it won't work for others.</p>
 
+            <h2>Generation Success!</h2>
+
+            <p class="card-p">
+                This key is locked to your device. Share it, and it won't work for others.
+            </p>
+
+            <!-- KEY -->
             <div class="key-box">
                 <span id="finalKey">SECURE FETCHING...</span>
             </div>
 
-            <button class="btn" id="copyBtn" onclick="copyKey()">
+            <!-- TIMER -->
+            <div class="timer-box">
+                <div class="timer-title">
+                    ⌛ Key Valid For
+                </div>
+
+                <div id="countdown">
+                    24:00:00
+                </div>
+            </div>
+
+            <!-- STATUS -->
+            <div id="keyStatus" class="key-status">
+                KEY IS ACTIVE
+            </div>
+
+            <!-- COPY BUTTON -->
+            <button
+                class="btn"
+                id="copyBtn"
+                onclick="copyKey()"
+            >
                 COPY TO CLIPBOARD
             </button>
+
         </div>
     </div>
 
+
+    <!-- ================= BYPASS CONTAINER ================= -->
     <div id="bypassContainer">
+
         <div class="error-card">
-            <div class="error-icon">🚫</div>
-            <div class="error-title">Bypass Detected!</div>
-            <p style="color:#888; font-size: 14px; line-height: 1.5;">Direct access is prohibited. Please use the official link from the script to generate your key.</p>
-            <button class="btn btn-red" onclick="location.href='steps.html'">RETURN TO STEPS</button>
+
+            <div class="error-icon">
+                🚫
+            </div>
+
+            <div class="error-title">
+                Bypass Detected!
+            </div>
+
+            <p style="color:#888; font-size:14px; line-height:1.5;">
+                Direct access is prohibited. Please use the official link from the script to generate your key.
+            </p>
+
+            <button
+                class="btn btn-red"
+                onclick="location.href='steps.html'"
+            >
+                RETURN TO STEPS
+            </button>
+
         </div>
+
     </div>
 
-    <div class="footer">Faraz Playz LAG SECURITY SYSTEM</div>
+
+    <div class="footer">
+        Faraz Playz LAG SECURITY SYSTEM
+    </div>
+
 </div>
 
+
 <script>
-    // ORIGINAL SECURITY - Bypass detection active
+
+    /* =========================================================
+       SECURITY CHECK
+    ========================================================= */
+
     async function checkSecurity() {
+
         const urlParams = new URLSearchParams(window.location.search);
+
         const source = urlParams.get('source');
+
         const referrer = document.referrer;
-        
-        if (source === "official" || referrer.includes("vplink.io") || referrer.includes("lootdest.org") || referrer.includes("steps.html")) {
+
+
+        if (
+            source === "official" ||
+            referrer.includes("vplink.io") ||
+            referrer.includes("lootdest.org") ||
+            referrer.includes("steps.html")
+        ) {
+
             if (source === "official") {
-                const cleanUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
-                window.history.replaceState({}, document.title, cleanUrl);
+
+                const cleanUrl =
+                    window.location.protocol +
+                    "//" +
+                    window.location.host +
+                    window.location.pathname;
+
+                window.history.replaceState(
+                    {},
+                    document.title,
+                    cleanUrl
+                );
             }
-            document.getElementById('mainContainer').style.display = "block";
-            generateLockedKey(); 
+
+
+            document.getElementById(
+                'mainContainer'
+            ).style.display = "block";
+
+
+            generateLockedKey();
+
         } else {
-            document.getElementById('mainContainer').style.display = "none";
-            document.getElementById('bypassContainer').style.display = "block";
-            document.getElementById('finalKey').innerText = "ACCESS DENIED";
+
+            document.getElementById(
+                'mainContainer'
+            ).style.display = "none";
+
+
+            document.getElementById(
+                'bypassContainer'
+            ).style.display = "block";
+
+
+            document.getElementById(
+                'finalKey'
+            ).innerText = "ACCESS DENIED";
         }
     }
+
+
+    /* =========================================================
+       KEY GENERATION
+    ========================================================= */
 
     async function generateLockedKey() {
-    try {
-        const response = await fetch('https://api.ipify.org?format=json');
-        const data = await response.json();
-        const ip = data.ip;
 
-        // Aaj ki Date (Daily expiry ke liye)
-        const day = Math.floor(Date.now() / 86400000);
-        const ipSeed = parseInt(ip.replace(/\./g, '').substring(0, 6)); 
-        
-        // Seed: IP + Date + Year (Ye App se match hona chahiye)
-        let seed = ipSeed + day + 2026; 
-        
-        function rnd() { 
-            var x = Math.sin(seed++) * 10000; 
-            return Math.abs(x - Math.floor(x)); 
-        }
-        
-        const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
-        let segments = [];
-        for(let i=0; i<4; i++) {
-            let s = "";
-            for(let j=0; j<4; j++) {
-                let r = Math.floor(rnd() * chars.length);
-                s += chars.charAt(r);
+        try {
+
+            const response = await fetch(
+                'https://api.ipify.org?format=json'
+            );
+
+            const data = await response.json();
+
+            const ip = data.ip;
+
+
+            /* Daily expiry seed */
+
+            const day =
+                Math.floor(Date.now() / 86400000);
+
+
+            const ipSeed =
+                parseInt(
+                    ip.replace(/\./g, '')
+                      .substring(0, 6)
+                );
+
+
+            /* Seed */
+
+            let seed =
+                ipSeed +
+                day +
+                2026;
+
+
+            function rnd() {
+
+                var x =
+                    Math.sin(seed++) *
+                    10000;
+
+                return Math.abs(
+                    x - Math.floor(x)
+                );
             }
-            segments.push(s);
+
+
+            const chars =
+                "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+
+
+            let segments = [];
+
+
+            for (let i = 0; i < 4; i++) {
+
+                let s = "";
+
+
+                for (let j = 0; j < 4; j++) {
+
+                    let r =
+                        Math.floor(
+                            rnd() * chars.length
+                        );
+
+
+                    s += chars.charAt(r);
+                }
+
+
+                segments.push(s);
+            }
+
+
+            const finalKey =
+                "FARAZ-" +
+                segments.join("-");
+
+
+            document.getElementById(
+                'finalKey'
+            ).innerText = finalKey;
+
+
+            /* Start 24-hour timer */
+
+            startKeyTimer();
+
+
+        } catch (err) {
+
+            document.getElementById(
+                'finalKey'
+            ).innerText =
+                "CONNECT TO INTERNET";
+        }
+    }
+
+
+    /* =========================================================
+       24 HOUR KEY TIMER
+    ========================================================= */
+
+    function startKeyTimer() {
+
+        const TIMER_DURATION =
+            24 * 60 * 60 * 1000;
+
+
+        const STORAGE_KEY =
+            "faraz_playz_key_expiry";
+
+
+        let expiry =
+            localStorage.getItem(
+                STORAGE_KEY
+            );
+
+
+        /*
+         * New 24-hour timer if
+         * previous timer doesn't exist
+         * or has already expired.
+         */
+
+        if (
+            !expiry ||
+            Number(expiry) <= Date.now()
+        ) {
+
+            expiry =
+                Date.now() +
+                TIMER_DURATION;
+
+
+            localStorage.setItem(
+                STORAGE_KEY,
+                expiry
+            );
         }
 
-        const finalKey = "FARAZ-" + segments.join("-");
-        document.getElementById('finalKey').innerText = finalKey;
 
-    } catch (err) {
-        document.getElementById('finalKey').innerText = "CONNECT TO INTERNET";
+        function updateTimer() {
+
+            const remaining =
+                Number(expiry) -
+                Date.now();
+
+
+            const countdown =
+                document.getElementById(
+                    "countdown"
+                );
+
+
+            const status =
+                document.getElementById(
+                    "keyStatus"
+                );
+
+
+            if (remaining <= 0) {
+
+                countdown.innerText =
+                    "00:00:00";
+
+
+                status.innerText =
+                    "KEY EXPIRED";
+
+
+                status.classList.add(
+                    "expired"
+                );
+
+
+                return;
+            }
+
+
+            const totalSeconds =
+                Math.floor(
+                    remaining / 1000
+                );
+
+
+            const hours =
+                Math.floor(
+                    totalSeconds / 3600
+                );
+
+
+            const minutes =
+                Math.floor(
+                    (totalSeconds % 3600) / 60
+                );
+
+
+            const seconds =
+                totalSeconds % 60;
+
+
+            countdown.innerText =
+                String(hours).padStart(2, "0") +
+                ":" +
+                String(minutes).padStart(2, "0") +
+                ":" +
+                String(seconds).padStart(2, "0");
+
+
+            status.innerText =
+                "KEY IS ACTIVE";
+        }
+
+
+        updateTimer();
+
+
+        setInterval(
+            updateTimer,
+            1000
+        );
     }
-}
+
+
+    /* =========================================================
+       COPY KEY
+    ========================================================= */
 
     function copyKey() {
-        const keyText = document.getElementById('finalKey').innerText;
-        if(keyText.includes("SECURE") || keyText.includes("CONNECT")) return;
 
-        navigator.clipboard.writeText(keyText).then(() => {
-            const btn = document.getElementById('copyBtn');
-            btn.innerText = "COPIED SUCCESSFULLY! ✅";
-            btn.style.background = "#00ff88";
-            setTimeout(() => { 
-                btn.innerText = "COPY TO CLIPBOARD"; 
-                btn.style.background = "#ffffff";
+        const keyText =
+            document.getElementById(
+                'finalKey'
+            ).innerText;
+
+
+        if (
+            keyText.includes("SECURE") ||
+            keyText.includes("CONNECT") ||
+            keyText.includes("ACCESS DENIED")
+        ) {
+            return;
+        }
+
+
+        navigator.clipboard.writeText(
+            keyText
+        ).then(() => {
+
+            const btn =
+                document.getElementById(
+                    'copyBtn'
+                );
+
+
+            btn.innerText =
+                "COPIED SUCCESSFULLY! ✅";
+
+
+            btn.style.background =
+                "#00ff88";
+
+
+            setTimeout(() => {
+
+                btn.innerText =
+                    "COPY TO CLIPBOARD";
+
+
+                btn.style.background =
+                    "#ffffff";
+
             }, 2000);
+
         });
     }
 
-    window.onload = checkSecurity;
+
+    /* =========================================================
+       PAGE LOAD
+    ========================================================= */
+
+    window.onload =
+        checkSecurity;
+
 </script>
+
 </body>
 </html>
