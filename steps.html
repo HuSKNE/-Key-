@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>FARAZ PLAYZ | Get Your Key</title>
 
 <style>
+
 * {
     box-sizing: border-box;
 }
@@ -21,6 +22,7 @@ body {
 }
 
 body {
+    background: #000;
     color: #fff;
     font-family: "Courier New", Courier, monospace;
 
@@ -30,29 +32,35 @@ body {
 
     min-height: 100vh;
 
-    padding: 12px 35px;
+    padding: 5px 35px;
 
     overflow: hidden;
 }
 
-/* MAIN */
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
 .container {
     width: 100%;
     max-width: 620px;
-
     text-align: center;
-
-    margin: auto;
 }
 
-/* LOGO */
-.key-icon {
-    width: 90px;
-    height: 90px;
 
-    margin: 0 auto 12px;
+/* =========================
+   LOGO
+========================= */
+
+.key-icon {
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 6px;
 
     border-radius: 50%;
+
     overflow: hidden;
 
     border: 3px solid #00ff88;
@@ -60,8 +68,8 @@ body {
     background: #050505;
 
     box-shadow:
-        0 0 12px rgba(0,255,136,.4),
-        0 0 25px rgba(0,255,136,.12);
+        0 0 12px rgba(0,255,136,.45),
+        0 0 25px rgba(0,255,136,.10);
 }
 
 .key-icon img {
@@ -73,14 +81,19 @@ body {
     object-fit: cover;
 }
 
-/* TITLE */
+
+/* =========================
+   TITLE
+========================= */
+
 h1 {
-    margin: 0 0 5px;
+    margin: 0 0 2px;
 
     color: #00ff88;
 
-    font-size: 28px;
-    line-height: 1.1;
+    font-size: 25px;
+
+    line-height: 1;
 
     font-weight: bold;
 
@@ -91,57 +104,66 @@ h1 {
 }
 
 .subtitle {
-    margin: 0 0 20px;
+    margin: 0 0 10px;
 
     color: #316b4e;
 
-    font-size: 13px;
+    font-size: 11px;
 
     letter-spacing: 3px;
 }
 
-/* PROGRESS */
+
+/* =========================
+   PROGRESS
+========================= */
+
 .progress-container {
     width: 100%;
 
     display: flex;
+
     align-items: center;
 
-    margin-bottom: 18px;
+    margin-bottom: 10px;
 }
 
 .step-indicator {
     display: flex;
+
     align-items: center;
 
-    gap: 10px;
+    gap: 8px;
 
     white-space: nowrap;
 }
 
 .circle {
-    width: 48px;
-    height: 48px;
+    width: 40px;
+    height: 40px;
 
-    min-width: 48px;
+    min-width: 40px;
 
     border-radius: 50%;
 
     border: 3px solid #286b48;
 
     display: flex;
-    align-items: center;
+
     justify-content: center;
+
+    align-items: center;
 
     color: #347b57;
 
     background: #050805;
 
-    font-size: 17px;
+    font-size: 15px;
 }
 
 .circle.active {
     border-color: #00ff88;
+
     color: #00ff88;
 
     box-shadow:
@@ -151,9 +173,9 @@ h1 {
 .step-text {
     color: #316b4e;
 
-    font-size: 14px;
+    font-size: 12px;
 
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
 }
 
 .line {
@@ -163,10 +185,14 @@ h1 {
 
     background: #347d58;
 
-    margin: 0 15px;
+    margin: 0 12px;
 }
 
-/* CARD */
+
+/* =========================
+   COMPLETE STEP CARD
+========================= */
+
 .card {
     width: 100%;
 
@@ -174,25 +200,25 @@ h1 {
 
     border: 1px solid #276b45;
 
-    border-radius: 25px;
+    border-radius: 22px;
 
-    padding: 27px 30px 25px;
+    padding: 18px 22px;
 
     text-align: left;
 
     box-shadow:
-        0 10px 35px rgba(0,0,0,.65),
+        0 8px 30px rgba(0,0,0,.65),
         0 0 25px rgba(0,255,136,.04);
 }
 
 .card h2 {
-    margin: 0 0 12px;
+    margin: 0 0 8px;
 
     color: #00ff88;
 
-    font-size: 20px;
+    font-size: 18px;
 
-    line-height: 1.2;
+    line-height: 1.15;
 
     letter-spacing: 1px;
 
@@ -201,36 +227,44 @@ h1 {
 }
 
 .card-p {
-    margin: 0 0 18px;
+    margin: 0 0 10px;
 
     color: #316b4e;
 
-    font-size: 14px;
+    font-size: 12px;
 
-    line-height: 1.55;
+    line-height: 1.3;
 
-    letter-spacing: .7px;
+    letter-spacing: .5px;
 }
 
-/* FEATURES */
+
+/* =========================
+   FEATURES
+========================= */
+
 .features {
     list-style: none;
 
     padding: 0;
-    margin: 0 0 20px;
+
+    margin: 0 0 10px;
 }
 
 .features li {
     display: flex;
+
     align-items: center;
 
     color: #316b4e;
 
-    font-size: 14px;
+    font-size: 12px;
 
-    margin-bottom: 11px;
+    line-height: 1.2;
 
-    letter-spacing: .7px;
+    margin-bottom: 4px;
+
+    letter-spacing: .5px;
 }
 
 .features li:last-child {
@@ -244,37 +278,41 @@ h1 {
 
     font-family: Arial, sans-serif;
 
-    font-size: 21px;
+    font-size: 18px;
 
     font-weight: bold;
 
-    margin-right: 15px;
+    margin-right: 12px;
 
     text-shadow:
-        0 0 8px rgba(0,255,136,.4);
+        0 0 8px rgba(0,255,136,.45);
 }
 
-/* WARNING */
+
+/* =========================
+   SECURITY NOTICE
+========================= */
+
 .warning {
     background: #1a1305;
 
     border: 1px solid #574606;
 
-    border-radius: 15px;
+    border-radius: 13px;
 
-    padding: 15px;
+    padding: 10px;
 
     display: flex;
 
-    gap: 13px;
+    gap: 10px;
 
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .warning-icon {
     flex-shrink: 0;
 
-    font-size: 28px;
+    font-size: 23px;
 
     line-height: 1;
 }
@@ -282,11 +320,11 @@ h1 {
 .warning-title {
     color: #ffd42a;
 
-    font-size: 15px;
+    font-size: 13px;
 
     font-weight: bold;
 
-    margin-bottom: 5px;
+    margin-bottom: 2px;
 
     letter-spacing: .5px;
 }
@@ -294,30 +332,34 @@ h1 {
 .warning-text {
     color: #826d27;
 
-    font-size: 12px;
+    font-size: 10px;
 
-    line-height: 1.45;
+    line-height: 1.3;
 
-    letter-spacing: .5px;
+    letter-spacing: .3px;
 }
 
-/* BUTTON */
+
+/* =========================
+   BUTTON
+========================= */
+
 .btn {
     width: 100%;
 
-    padding: 15px;
-
-    border: none;
-
-    border-radius: 15px;
+    padding: 12px;
 
     background: #00f985;
 
     color: #001b0d;
 
+    border: none;
+
+    border-radius: 13px;
+
     font-family: Arial, sans-serif;
 
-    font-size: 16px;
+    font-size: 14px;
 
     font-weight: bold;
 
@@ -339,70 +381,8 @@ h1 {
 
 
 /* =========================
-   SHORT HEIGHT DEVICES
-   ========================= */
-
-@media (max-height: 750px) {
-
-    body {
-        padding-top: 5px;
-        padding-bottom: 5px;
-    }
-
-    .key-icon {
-        width: 72px;
-        height: 72px;
-        margin-bottom: 7px;
-    }
-
-    h1 {
-        font-size: 24px;
-    }
-
-    .subtitle {
-        margin-bottom: 12px;
-    }
-
-    .progress-container {
-        margin-bottom: 12px;
-    }
-
-    .circle {
-        width: 42px;
-        height: 42px;
-        min-width: 42px;
-    }
-
-    .card {
-        padding: 20px 25px;
-    }
-
-    .card-p {
-        margin-bottom: 12px;
-    }
-
-    .features {
-        margin-bottom: 14px;
-    }
-
-    .features li {
-        margin-bottom: 7px;
-    }
-
-    .warning {
-        margin-bottom: 14px;
-        padding: 12px;
-    }
-
-    .btn {
-        padding: 13px;
-    }
-}
-
-
-/* =========================
    MOBILE
-   ========================= */
+========================= */
 
 @media (max-width: 600px) {
 
@@ -415,73 +395,169 @@ h1 {
         max-width: 100%;
     }
 
+}
+
+
+/* =========================
+   SHORT SCREEN
+========================= */
+
+@media (max-height: 850px) {
+
+    body {
+        padding-top: 3px;
+        padding-bottom: 3px;
+    }
+
     .key-icon {
-        width: 90px;
-        height: 90px;
+        width: 60px;
+        height: 60px;
+
+        margin-bottom: 5px;
     }
 
     h1 {
-        font-size: 28px;
+        font-size: 22px;
+    }
+
+    .subtitle {
+        font-size: 10px;
+
+        margin-bottom: 7px;
+    }
+
+    .progress-container {
+        margin-bottom: 8px;
+    }
+
+    .circle {
+        width: 38px;
+        height: 38px;
+
+        min-width: 38px;
+
+        font-size: 14px;
     }
 
     .card {
-        padding: 27px 30px 25px;
+        padding: 15px 18px;
+
+        border-radius: 19px;
+    }
+
+    .card h2 {
+        font-size: 17px;
+
+        margin-bottom: 6px;
+    }
+
+    .card-p {
+        font-size: 11px;
+
+        line-height: 1.2;
+
+        margin-bottom: 9px;
+    }
+
+    .features {
+        margin-bottom: 9px;
+    }
+
+    .features li {
+        font-size: 11px;
+
+        margin-bottom: 2px;
+    }
+
+    .features li::before {
+        font-size: 17px;
+
+        margin-right: 10px;
+    }
+
+    .warning {
+        padding: 8px;
+
+        margin-bottom: 9px;
+    }
+
+    .warning-icon {
+        font-size: 20px;
+    }
+
+    .warning-title {
+        font-size: 12px;
+    }
+
+    .warning-text {
+        font-size: 9px;
+    }
+
+    .btn {
+        padding: 10px;
+
+        font-size: 13px;
     }
 }
 
 
-/* VERY SMALL MOBILE */
+/* =========================
+   SMALL PHONE
+========================= */
+
 @media (max-width: 380px) {
 
     body {
-        padding-left: 22px;
-        padding-right: 22px;
-    }
-
-    .key-icon {
-        width: 80px;
-        height: 80px;
-    }
-
-    h1 {
-        font-size: 25px;
-        letter-spacing: 3px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
     .card {
-        padding: 23px 24px;
+        padding-left: 18px;
+        padding-right: 18px;
     }
 
-    .card-p {
-        font-size: 13px;
+    h1 {
+        font-size: 21px;
+
+        letter-spacing: 3px;
     }
 
-    .features li {
-        font-size: 13px;
+    .step-text {
+        font-size: 10px;
     }
 
-    .warning-text {
-        font-size: 11px;
+    .line {
+        margin: 0 7px;
     }
 }
 
 </style>
 </head>
 
+
 <body>
 
 <div class="container">
 
-    <!-- YOUR LOGO -->
+
+    <!-- LOGO -->
+
     <div class="key-icon">
+
         <img
             src="./assets/logo.png"
             alt="FARAZ PLAYZ">
+
     </div>
 
 
-    <!-- YOUR NAME -->
-    <h1>FARAZ PLAYZ</h1>
+    <!-- NAME -->
+
+    <h1>
+        FARAZ PLAYZ
+    </h1>
+
 
     <p class="subtitle">
         GET YOUR KEY
@@ -489,6 +565,7 @@ h1 {
 
 
     <!-- STEP PROGRESS -->
+
     <div class="progress-container">
 
         <div class="step-indicator">
@@ -503,7 +580,9 @@ h1 {
 
         </div>
 
+
         <div class="line"></div>
+
 
         <div class="circle">
             ✓
@@ -512,8 +591,10 @@ h1 {
     </div>
 
 
-    <!-- MAIN CARD -->
+    <!-- COMPLETE STEP -->
+
     <div class="card">
+
 
         <h2>
             Complete Step 1
@@ -528,6 +609,7 @@ h1 {
 
 
         <!-- FEATURES -->
+
         <ul class="features">
 
             <li>
@@ -549,18 +631,21 @@ h1 {
         </ul>
 
 
-        <!-- SECURITY NOTICE -->
+        <!-- SECURITY -->
+
         <div class="warning">
 
             <div class="warning-icon">
                 ⚠️
             </div>
 
+
             <div>
 
                 <div class="warning-title">
                     Security Notice
                 </div>
+
 
                 <div class="warning-text">
                     The use of bots or automation
@@ -572,7 +657,8 @@ h1 {
         </div>
 
 
-        <!-- SAME REDIRECT -->
+        <!-- BUTTON -->
+
         <button
             class="btn"
             onclick="location.href='https://vplink.in/2Fx6'">
@@ -580,6 +666,7 @@ h1 {
             CONTINUE TO STEP →
 
         </button>
+
 
     </div>
 
