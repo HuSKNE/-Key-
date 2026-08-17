@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Key Generated | Faraz Playz Lag</title>
 
     <style>
@@ -21,10 +22,13 @@
         body {
             background-color: var(--bg);
             color: var(--text);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont,
+                "Segoe UI", Roboto, sans-serif;
+
             display: flex;
             justify-content: center;
             align-items: center;
+
             min-height: 100vh;
             margin: 0;
             padding: 20px;
@@ -37,7 +41,7 @@
             margin-top: 50px;
         }
 
-        /* --- UI Visibility Controls --- */
+        /* UI Visibility */
         #mainContainer {
             display: none;
         }
@@ -46,12 +50,16 @@
             display: none;
         }
 
-        /* --- BYPASS ERROR CARD --- */
+        /* =========================
+           BYPASS ERROR
+        ========================== */
+
         .error-card {
             background: #1a0a0a;
             border: 1px solid #441111;
             border-radius: 28px;
             padding: 40px 30px;
+
             box-shadow: 0 10px 40px rgba(255,0,0,0.1);
         }
 
@@ -67,19 +75,31 @@
             margin-bottom: 15px;
         }
 
-        /* --- LOGO --- */
+        /* =========================
+           KEY ICON
+        ========================== */
+
         .key-icon {
             background: #1a1a1a;
+
             width: 85px;
             height: 85px;
+
             border-radius: 50%;
+
             display: flex;
             justify-content: center;
             align-items: center;
+
             margin: -45px auto 15px;
+
             border: 1px solid #333;
+
             overflow: hidden;
-            box-shadow: 0 0 25px rgba(0, 255, 136, 0.1);
+
+            box-shadow:
+                0 0 25px rgba(0,255,136,0.1);
+
             position: relative;
             z-index: 10;
         }
@@ -91,6 +111,7 @@
         }
 
         @media (min-width: 768px) {
+
             .container {
                 max-width: 450px;
             }
@@ -114,124 +135,212 @@
             margin-bottom: 30px;
         }
 
-        /* --- MAIN CARD --- */
+        /* =========================
+           MAIN CARD
+        ========================== */
+
         .card {
             background: var(--card);
+
             border: 1px solid #222;
             border-radius: 28px;
+
             padding: 40px 30px 30px;
+
             text-align: center;
-            box-shadow: 0 15px 50px rgba(0,0,0,0.6);
+
+            box-shadow:
+                0 15px 50px rgba(0,0,0,0.6);
+
             position: relative;
         }
 
         h2 {
             font-size: 22px;
             margin-bottom: 12px;
+
             color: var(--accent);
+
             font-weight: 700;
         }
 
         .card-p {
             color: #999;
+
             font-size: 14px;
+
             line-height: 1.6;
+
             margin-bottom: 25px;
         }
 
-        /* --- KEY BOX --- */
+        /* =========================
+           KEY BOX
+        ========================== */
+
         .key-box {
             background: #000;
+
             padding: 22px;
+
             border-radius: 18px;
+
             border: 1px dashed var(--accent);
-            margin-bottom: 18px;
+
+            margin-bottom: 20px;
+
             position: relative;
+
             overflow: hidden;
         }
 
         #finalKey {
             color: var(--accent);
+
             font-family: 'Courier New', monospace;
+
             font-size: 19px;
+
             font-weight: bold;
+
             letter-spacing: 1px;
+
             word-break: break-word;
         }
 
-        /* --- TIMER BOX --- */
+        /* =========================
+           TIMER BOX
+        ========================== */
+
         .timer-box {
-            background: #181818;
-            border: 1px solid #164f39;
+            background: #191919;
+
+            border: 1px solid rgba(0,255,136,0.35);
+
             border-radius: 18px;
-            padding: 17px 10px;
-            margin: 0 0 12px;
-            box-shadow: 0 0 20px rgba(0,255,136,0.08);
-            text-align: center;
+
+            padding: 16px 10px;
+
+            margin-bottom: 20px;
+
+            box-shadow:
+                0 0 18px rgba(0,255,136,0.05);
+
+            transition: 0.3s;
         }
 
-        .timer-title {
-            color: #888;
-            font-size: 15px;
+        .timer-label {
+            color: #999;
+
+            font-size: 14px;
+
+            font-weight: 500;
+
             margin-bottom: 5px;
         }
 
         #countdown {
             color: var(--accent);
+
             font-family: 'Courier New', monospace;
-            font-size: 28px;
+
+            font-size: 27px;
+
             font-weight: bold;
-            letter-spacing: 3px;
-            text-shadow: 0 0 10px rgba(0,255,136,0.5);
+
+            letter-spacing: 4px;
+
+            text-shadow:
+                0 0 10px rgba(0,255,136,0.35);
         }
 
-        /* --- ACTIVE STATUS --- */
-        .key-status {
+        .active-status {
             color: var(--accent);
+
             font-size: 14px;
-            font-weight: 700;
-            margin: 10px 0 20px;
-            text-shadow: 0 0 8px rgba(0,255,136,0.4);
+
+            font-weight: 600;
+
+            margin-bottom: 10px;
+
+            text-shadow:
+                0 0 8px rgba(0,255,136,0.25);
         }
 
-        .key-status.expired {
+        .expired-status {
             color: var(--error);
-            text-shadow: 0 0 8px rgba(255,68,68,0.4);
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            margin-bottom: 10px;
         }
 
-        /* --- BUTTON --- */
+        /* =========================
+           BUTTON
+        ========================== */
+
         .btn {
             width: 100%;
+
             padding: 18px;
+
             background: #ffffff;
+
             color: #000;
+
             border: none;
+
             border-radius: 16px;
+
             font-size: 16px;
+
             font-weight: 800;
+
             cursor: pointer;
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+            transition:
+                0.4s cubic-bezier(
+                    0.175,
+                    0.885,
+                    0.32,
+                    1.275
+                );
         }
 
         .btn:hover {
             transform: scale(1.03);
+
             background: var(--accent);
-            box-shadow: 0 10px 20px rgba(0,255,136,0.2);
+
+            box-shadow:
+                0 10px 20px rgba(0,255,136,0.2);
         }
 
         .btn-red {
             background: var(--error);
+
             color: white;
+
             margin-top: 20px;
         }
 
-        /* --- FOOTER --- */
+        /* =========================
+           FOOTER
+        ========================== */
+
         .footer {
             margin-top: 80px;
+
             color: #333;
+
             font-size: 10px;
+
             letter-spacing: 2px;
+
             text-transform: uppercase;
+
             font-weight: bold;
         }
     </style>
@@ -241,17 +350,24 @@
 
 <div class="container">
 
-    <!-- ================= MAIN CONTAINER ================= -->
+    <!-- =========================
+         MAIN CONTAINER
+    ========================== -->
+
     <div id="mainContainer">
 
         <div class="key-icon">
+
             <img
                 src="https://github.com/HuSKNE/-Key-/blob/main/assets/logo.png?raw=true"
                 alt="FARAZ"
             >
+
         </div>
 
-        <h1>Access Unlocked</h1>
+        <h1>
+            Access Unlocked
+        </h1>
 
         <p class="subtitle">
             Your device-locked license key is ready.
@@ -259,34 +375,50 @@
 
         <div class="card">
 
-            <h2>Generation Success!</h2>
+            <h2>
+                Generation Success!
+            </h2>
 
             <p class="card-p">
-                This key is locked to your device. Share it, and it won't work for others.
+                This key is locked to your device.
+                Share it, and it won't work for others.
             </p>
 
             <!-- KEY -->
+
             <div class="key-box">
-                <span id="finalKey">SECURE FETCHING...</span>
+
+                <span id="finalKey">
+                    SECURE FETCHING...
+                </span>
+
             </div>
 
-            <!-- TIMER -->
+            <!-- =========================
+                 24 HOUR COUNTDOWN
+            ========================== -->
+
             <div class="timer-box">
-                <div class="timer-title">
-                    ⌛ Key Valid For
+
+                <div class="timer-label">
+                    ⏳ Key Valid For
                 </div>
 
                 <div id="countdown">
                     24:00:00
                 </div>
+
             </div>
 
-            <!-- STATUS -->
-            <div id="keyStatus" class="key-status">
+            <div
+                id="keyStatus"
+                class="active-status"
+            >
                 KEY IS ACTIVE
             </div>
 
             <!-- COPY BUTTON -->
+
             <button
                 class="btn"
                 id="copyBtn"
@@ -296,10 +428,14 @@
             </button>
 
         </div>
+
     </div>
 
 
-    <!-- ================= BYPASS CONTAINER ================= -->
+    <!-- =========================
+         BYPASS CONTAINER
+    ========================== -->
+
     <div id="bypassContainer">
 
         <div class="error-card">
@@ -312,8 +448,16 @@
                 Bypass Detected!
             </div>
 
-            <p style="color:#888; font-size:14px; line-height:1.5;">
-                Direct access is prohibited. Please use the official link from the script to generate your key.
+            <p
+                style="
+                    color:#888;
+                    font-size:14px;
+                    line-height:1.5;
+                "
+            >
+                Direct access is prohibited.
+                Please use the official link from
+                the script to generate your key.
             </p>
 
             <button
@@ -337,17 +481,20 @@
 
 <script>
 
-    /* =========================================================
+    /* =====================================
        SECURITY CHECK
-    ========================================================= */
+    ====================================== */
 
     async function checkSecurity() {
 
-        const urlParams = new URLSearchParams(window.location.search);
+        const urlParams =
+            new URLSearchParams(window.location.search);
 
-        const source = urlParams.get('source');
+        const source =
+            urlParams.get('source');
 
-        const referrer = document.referrer;
+        const referrer =
+            document.referrer;
 
 
         if (
@@ -391,45 +538,46 @@
                 'bypassContainer'
             ).style.display = "block";
 
-
-            document.getElementById(
-                'finalKey'
-            ).innerText = "ACCESS DENIED";
         }
+
     }
 
 
-    /* =========================================================
-       KEY GENERATION
-    ========================================================= */
+    /* =====================================
+       GENERATE KEY
+    ====================================== */
 
     async function generateLockedKey() {
 
         try {
 
-            const response = await fetch(
-                'https://api.ipify.org?format=json'
-            );
+            const response =
+                await fetch(
+                    'https://api.ipify.org?format=json'
+                );
 
-            const data = await response.json();
+            const data =
+                await response.json();
 
-            const ip = data.ip;
+            const ip =
+                data.ip;
 
 
-            /* Daily expiry seed */
+            /* Daily seed */
 
             const day =
-                Math.floor(Date.now() / 86400000);
+                Math.floor(
+                    Date.now() / 86400000
+                );
 
 
             const ipSeed =
                 parseInt(
-                    ip.replace(/\./g, '')
-                      .substring(0, 6)
+                    ip
+                        .replace(/\./g, '')
+                        .substring(0, 6)
                 );
 
-
-            /* Seed */
 
             let seed =
                 ipSeed +
@@ -446,6 +594,7 @@
                 return Math.abs(
                     x - Math.floor(x)
                 );
+
             }
 
 
@@ -456,24 +605,34 @@
             let segments = [];
 
 
-            for (let i = 0; i < 4; i++) {
+            for (
+                let i = 0;
+                i < 4;
+                i++
+            ) {
 
                 let s = "";
 
 
-                for (let j = 0; j < 4; j++) {
+                for (
+                    let j = 0;
+                    j < 4;
+                    j++
+                ) {
 
                     let r =
                         Math.floor(
-                            rnd() * chars.length
+                            rnd() *
+                            chars.length
                         );
 
+                    s +=
+                        chars.charAt(r);
 
-                    s += chars.charAt(r);
                 }
 
-
                 segments.push(s);
+
             }
 
 
@@ -484,10 +643,13 @@
 
             document.getElementById(
                 'finalKey'
-            ).innerText = finalKey;
+            ).innerText =
+                finalKey;
 
 
-            /* Start 24-hour timer */
+            /* =================================
+               START 24 HOUR TIMER
+            ================================= */
 
             startKeyTimer();
 
@@ -498,139 +660,199 @@
                 'finalKey'
             ).innerText =
                 "CONNECT TO INTERNET";
+
         }
+
     }
 
 
-    /* =========================================================
+    /* =====================================
        24 HOUR KEY TIMER
-    ========================================================= */
+    ====================================== */
+
+    const KEY_DURATION =
+        24 * 60 * 60 * 1000;
+
+
+    let timerInterval;
+
 
     function startKeyTimer() {
 
-        const TIMER_DURATION =
-            24 * 60 * 60 * 1000;
+        const storageKey =
+            "faraz_key_generated_time";
 
 
-        const STORAGE_KEY =
-            "faraz_playz_key_expiry";
-
-
-        let expiry =
+        let startTime =
             localStorage.getItem(
-                STORAGE_KEY
+                storageKey
             );
 
 
         /*
-         * New 24-hour timer if
-         * previous timer doesn't exist
-         * or has already expired.
+         * Agar pehli baar key generate hui hai,
+         * tabhi timer start hoga.
          */
 
-        if (
-            !expiry ||
-            Number(expiry) <= Date.now()
-        ) {
+        if (!startTime) {
 
-            expiry =
-                Date.now() +
-                TIMER_DURATION;
-
-
-            localStorage.setItem(
-                STORAGE_KEY,
-                expiry
-            );
-        }
-
-
-        function updateTimer() {
-
-            const remaining =
-                Number(expiry) -
+            startTime =
                 Date.now();
 
+            localStorage.setItem(
+                storageKey,
+                startTime
+            );
 
-            const countdown =
-                document.getElementById(
-                    "countdown"
-                );
-
-
-            const status =
-                document.getElementById(
-                    "keyStatus"
-                );
-
-
-            if (remaining <= 0) {
-
-                countdown.innerText =
-                    "00:00:00";
-
-
-                status.innerText =
-                    "KEY EXPIRED";
-
-
-                status.classList.add(
-                    "expired"
-                );
-
-
-                return;
-            }
-
-
-            const totalSeconds =
-                Math.floor(
-                    remaining / 1000
-                );
-
-
-            const hours =
-                Math.floor(
-                    totalSeconds / 3600
-                );
-
-
-            const minutes =
-                Math.floor(
-                    (totalSeconds % 3600) / 60
-                );
-
-
-            const seconds =
-                totalSeconds % 60;
-
-
-            countdown.innerText =
-                String(hours).padStart(2, "0") +
-                ":" +
-                String(minutes).padStart(2, "0") +
-                ":" +
-                String(seconds).padStart(2, "0");
-
-
-            status.innerText =
-                "KEY IS ACTIVE";
         }
 
 
-        updateTimer();
-
-
-        setInterval(
-            updateTimer,
-            1000
+        updateCountdown(
+            Number(startTime)
         );
+
+
+        clearInterval(
+            timerInterval
+        );
+
+
+        timerInterval =
+            setInterval(
+                function() {
+
+                    updateCountdown(
+                        Number(startTime)
+                    );
+
+                },
+                1000
+            );
+
     }
 
 
-    /* =========================================================
+    /* =====================================
+       UPDATE COUNTDOWN
+    ====================================== */
+
+    function updateCountdown(startTime) {
+
+        const now =
+            Date.now();
+
+
+        const elapsed =
+            now - startTime;
+
+
+        let remaining =
+            KEY_DURATION -
+            elapsed;
+
+
+        const countdown =
+            document.getElementById(
+                'countdown'
+            );
+
+        const status =
+            document.getElementById(
+                'keyStatus'
+            );
+
+
+        /* ================================
+           TIMER EXPIRED
+        ================================= */
+
+        if (remaining <= 0) {
+
+            remaining = 0;
+
+
+            countdown.innerText =
+                "00:00:00";
+
+
+            status.innerText =
+                "KEY EXPIRED";
+
+
+            status.className =
+                "expired-status";
+
+
+            countdown.style.color =
+                "#ff4444";
+
+
+            clearInterval(
+                timerInterval
+            );
+
+
+            return;
+
+        }
+
+
+        /* ================================
+           TIME CALCULATION
+        ================================= */
+
+        const hours =
+            Math.floor(
+                remaining /
+                (1000 * 60 * 60)
+            );
+
+
+        const minutes =
+            Math.floor(
+                (
+                    remaining %
+                    (1000 * 60 * 60)
+                ) /
+                (1000 * 60)
+            );
+
+
+        const seconds =
+            Math.floor(
+                (
+                    remaining %
+                    (1000 * 60)
+                ) /
+                1000
+            );
+
+
+        countdown.innerText =
+            String(hours).padStart(2, "0") +
+            ":" +
+            String(minutes).padStart(2, "0") +
+            ":" +
+            String(seconds).padStart(2, "0");
+
+
+        status.innerText =
+            "KEY IS ACTIVE";
+
+
+        status.className =
+            "active-status";
+
+
+        countdown.style.color =
+            "#00ff88";
+
+    }
+
+
+    /* =====================================
        COPY KEY
-    ========================================================= */
+    ====================================== */
 
     function copyKey() {
 
@@ -643,48 +865,54 @@
         if (
             keyText.includes("SECURE") ||
             keyText.includes("CONNECT") ||
-            keyText.includes("ACCESS DENIED")
+            keyText.includes("ACCESS")
         ) {
+
             return;
+
         }
 
 
-        navigator.clipboard.writeText(
-            keyText
-        ).then(() => {
+        navigator.clipboard
+            .writeText(keyText)
+            .then(() => {
 
-            const btn =
-                document.getElementById(
-                    'copyBtn'
-                );
+                const btn =
+                    document.getElementById(
+                        'copyBtn'
+                    );
 
-
-            btn.innerText =
-                "COPIED SUCCESSFULLY! ✅";
-
-
-            btn.style.background =
-                "#00ff88";
-
-
-            setTimeout(() => {
 
                 btn.innerText =
-                    "COPY TO CLIPBOARD";
+                    "COPIED SUCCESSFULLY! ✅";
 
 
                 btn.style.background =
-                    "#ffffff";
+                    "#00ff88";
 
-            }, 2000);
 
-        });
+                setTimeout(
+                    () => {
+
+                        btn.innerText =
+                            "COPY TO CLIPBOARD";
+
+
+                        btn.style.background =
+                            "#ffffff";
+
+                    },
+                    2000
+                );
+
+            });
+
     }
 
 
-    /* =========================================================
+    /* =====================================
        PAGE LOAD
-    ========================================================= */
+    ====================================== */
 
     window.onload =
         checkSecurity;
