@@ -1,656 +1,589 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FARAZ PLAYZ | Get Your Key</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-    <style>
-        :root {
-            --bg: #000000;
-            --card: #09150c;
-            --border: #276b45;
-            --green: #00ff88;
-            --soft-green: #316b4e;
-            --line: #347d58;
+<title>FARAZ PLAYZ | Get Your Key</title>
 
-            --warning-bg: #1a1305;
-            --warning-border: #574606;
-            --warning-title: #ffd42a;
-            --warning-text: #826d27;
-        }
+<style>
+* {
+    box-sizing: border-box;
+}
 
-        * {
-            box-sizing: border-box;
-        }
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #000;
+}
 
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            min-height: 100%;
-        }
+body {
+    color: #fff;
+    font-family: "Courier New", Courier, monospace;
 
-        body {
-            background: #000000;
-            color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-            font-family:
-                "Courier New",
-                Courier,
-                monospace;
+    min-height: 100vh;
 
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
+    padding: 12px 35px;
 
-            min-height: 100vh;
+    overflow: hidden;
+}
 
-            padding: 35px 20px 45px;
+/* MAIN */
+.container {
+    width: 100%;
+    max-width: 620px;
 
-            overflow-x: hidden;
-        }
+    text-align: center;
 
-        /* GREEN AMBIENT GLOW */
-        body::before {
-            content: "";
+    margin: auto;
+}
 
-            position: fixed;
+/* LOGO */
+.key-icon {
+    width: 90px;
+    height: 90px;
 
-            width: 260px;
-            height: 260px;
+    margin: 0 auto 12px;
 
-            top: 35px;
-            left: 50%;
+    border-radius: 50%;
+    overflow: hidden;
 
-            transform: translateX(-50%);
+    border: 3px solid #00ff88;
 
-            background: rgba(0, 255, 136, 0.055);
+    background: #050505;
 
-            filter: blur(75px);
+    box-shadow:
+        0 0 12px rgba(0,255,136,.4),
+        0 0 25px rgba(0,255,136,.12);
+}
 
-            border-radius: 50%;
+.key-icon img {
+    width: 100%;
+    height: 100%;
 
-            pointer-events: none;
-        }
+    display: block;
 
-        .container {
-            width: 100%;
-            max-width: 620px;
+    object-fit: cover;
+}
 
-            text-align: center;
+/* TITLE */
+h1 {
+    margin: 0 0 5px;
 
-            position: relative;
-            z-index: 1;
-        }
+    color: #00ff88;
 
-        /* =========================
-           LOGO
-        ========================= */
+    font-size: 28px;
+    line-height: 1.1;
 
-        .key-icon {
-            width: 90px;
-            height: 90px;
+    font-weight: bold;
 
-            margin: 0 auto 18px;
+    letter-spacing: 4px;
 
-            border-radius: 50%;
+    text-shadow:
+        0 0 8px rgba(0,255,136,.5);
+}
 
-            overflow: hidden;
+.subtitle {
+    margin: 0 0 20px;
 
-            background: #050505;
+    color: #316b4e;
 
-            border: 3px solid var(--green);
+    font-size: 13px;
 
-            box-shadow:
-                0 0 12px rgba(0, 255, 136, 0.35),
-                0 0 28px rgba(0, 255, 136, 0.12);
-        }
+    letter-spacing: 3px;
+}
 
-        .key-icon img {
-            width: 100%;
-            height: 100%;
+/* PROGRESS */
+.progress-container {
+    width: 100%;
 
-            display: block;
+    display: flex;
+    align-items: center;
 
-            object-fit: cover;
-        }
+    margin-bottom: 18px;
+}
 
-        /* =========================
-           TITLE
-        ========================= */
+.step-indicator {
+    display: flex;
+    align-items: center;
 
-        h1 {
-            margin: 0 0 10px;
+    gap: 10px;
 
-            color: var(--green);
+    white-space: nowrap;
+}
 
-            font-size: 28px;
+.circle {
+    width: 48px;
+    height: 48px;
 
-            line-height: 1.2;
+    min-width: 48px;
 
-            font-weight: bold;
+    border-radius: 50%;
 
-            letter-spacing: 4px;
+    border: 3px solid #286b48;
 
-            text-shadow:
-                0 0 7px rgba(0, 255, 136, 0.5),
-                0 0 18px rgba(0, 255, 136, 0.15);
-        }
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-        .subtitle {
-            margin: 0 0 32px;
+    color: #347b57;
 
-            color: var(--soft-green);
+    background: #050805;
 
-            font-size: 14px;
+    font-size: 17px;
+}
 
-            letter-spacing: 3px;
-        }
+.circle.active {
+    border-color: #00ff88;
+    color: #00ff88;
 
-        /* =========================
-           PROGRESS
-        ========================= */
+    box-shadow:
+        0 0 10px rgba(0,255,136,.35);
+}
 
-        .progress-container {
-            width: 100%;
+.step-text {
+    color: #316b4e;
 
-            display: flex;
+    font-size: 14px;
 
-            align-items: center;
+    letter-spacing: 1.5px;
+}
 
-            justify-content: space-between;
+.line {
+    flex: 1;
 
-            margin-bottom: 25px;
-        }
+    height: 3px;
 
-        .step-indicator {
-            display: flex;
+    background: #347d58;
 
-            align-items: center;
+    margin: 0 15px;
+}
 
-            gap: 14px;
+/* CARD */
+.card {
+    width: 100%;
 
-            white-space: nowrap;
-        }
+    background: #09150c;
 
-        .circle {
-            width: 50px;
-            height: 50px;
+    border: 1px solid #276b45;
 
-            flex-shrink: 0;
+    border-radius: 25px;
 
-            border-radius: 50%;
+    padding: 27px 30px 25px;
 
-            border: 3px solid #286b48;
+    text-align: left;
 
-            background: #050805;
+    box-shadow:
+        0 10px 35px rgba(0,0,0,.65),
+        0 0 25px rgba(0,255,136,.04);
+}
 
-            display: flex;
+.card h2 {
+    margin: 0 0 12px;
 
-            align-items: center;
-            justify-content: center;
+    color: #00ff88;
 
-            color: #347b57;
+    font-size: 20px;
 
-            font-size: 18px;
+    line-height: 1.2;
 
-            box-shadow: 0 0 5px rgba(0,255,136,.05);
-        }
+    letter-spacing: 1px;
 
-        .circle.active {
-            border-color: var(--green);
+    text-shadow:
+        0 0 7px rgba(0,255,136,.3);
+}
 
-            color: var(--green);
+.card-p {
+    margin: 0 0 18px;
 
-            box-shadow:
-                0 0 10px rgba(0,255,136,.30),
-                0 0 20px rgba(0,255,136,.08);
-        }
+    color: #316b4e;
 
-        .step-text {
-            color: var(--soft-green);
+    font-size: 14px;
 
-            font-size: 15px;
+    line-height: 1.55;
 
-            letter-spacing: 2px;
-        }
+    letter-spacing: .7px;
+}
 
-        .line {
-            flex: 1;
+/* FEATURES */
+.features {
+    list-style: none;
 
-            height: 3px;
+    padding: 0;
+    margin: 0 0 20px;
+}
 
-            background: var(--line);
+.features li {
+    display: flex;
+    align-items: center;
 
-            margin: 0 18px;
+    color: #316b4e;
 
-            box-shadow:
-                0 0 7px rgba(0,255,136,.08);
-        }
+    font-size: 14px;
 
-        /* =========================
-           CARD
-        ========================= */
+    margin-bottom: 11px;
 
-        .card {
-            width: 100%;
+    letter-spacing: .7px;
+}
 
-            background: var(--card);
+.features li:last-child {
+    margin-bottom: 0;
+}
 
-            border: 1px solid var(--border);
+.features li::before {
+    content: "➜";
 
-            border-radius: 25px;
+    color: #00ff88;
 
-            padding: 30px;
+    font-family: Arial, sans-serif;
 
-            text-align: left;
+    font-size: 21px;
 
-            box-shadow:
-                0 10px 40px rgba(0,0,0,.60),
-                0 0 25px rgba(0,255,136,.04);
-        }
+    font-weight: bold;
 
-        .card h2 {
-            margin: 0 0 15px;
+    margin-right: 15px;
 
-            color: var(--green);
+    text-shadow:
+        0 0 8px rgba(0,255,136,.4);
+}
 
-            font-size: 20px;
+/* WARNING */
+.warning {
+    background: #1a1305;
 
-            line-height: 1.3;
+    border: 1px solid #574606;
 
-            letter-spacing: 1px;
+    border-radius: 15px;
 
-            text-shadow:
-                0 0 7px rgba(0,255,136,.30);
-        }
+    padding: 15px;
 
-        .card-p {
-            margin: 0 0 25px;
+    display: flex;
 
-            color: var(--soft-green);
+    gap: 13px;
 
-            font-size: 15px;
+    margin-bottom: 20px;
+}
 
-            line-height: 1.6;
+.warning-icon {
+    flex-shrink: 0;
 
-            letter-spacing: 1px;
-        }
+    font-size: 28px;
 
-        /* =========================
-           FEATURES
-        ========================= */
+    line-height: 1;
+}
 
-        .features {
-            list-style: none;
+.warning-title {
+    color: #ffd42a;
 
-            margin: 0 0 30px;
+    font-size: 15px;
 
-            padding: 0;
-        }
+    font-weight: bold;
 
-        .features li {
-            display: flex;
+    margin-bottom: 5px;
 
-            align-items: center;
+    letter-spacing: .5px;
+}
 
-            color: var(--soft-green);
+.warning-text {
+    color: #826d27;
 
-            font-size: 15px;
+    font-size: 12px;
 
-            margin-bottom: 18px;
+    line-height: 1.45;
 
-            letter-spacing: 1px;
-        }
+    letter-spacing: .5px;
+}
 
-        .features li:last-child {
-            margin-bottom: 0;
-        }
+/* BUTTON */
+.btn {
+    width: 100%;
 
-        .features li::before {
-            content: "➜";
+    padding: 15px;
 
-            color: var(--green);
+    border: none;
 
-            font-family: Arial, sans-serif;
+    border-radius: 15px;
 
-            font-size: 22px;
+    background: #00f985;
 
-            font-weight: bold;
+    color: #001b0d;
 
-            margin-right: 18px;
+    font-family: Arial, sans-serif;
 
-            text-shadow:
-                0 0 8px rgba(0,255,136,.40);
-        }
+    font-size: 16px;
 
-        /* =========================
-           SECURITY WARNING
-        ========================= */
+    font-weight: bold;
 
-        .warning {
-            background: var(--warning-bg);
+    cursor: pointer;
 
-            border: 1px solid var(--warning-border);
+    transition: .2s ease;
+}
 
-            border-radius: 16px;
+.btn:hover {
+    background: #00ff91;
 
-            padding: 18px;
+    box-shadow:
+        0 0 20px rgba(0,255,136,.25);
+}
 
-            display: flex;
+.btn:active {
+    transform: scale(.98);
+}
 
-            align-items: flex-start;
 
-            gap: 14px;
+/* =========================
+   SHORT HEIGHT DEVICES
+   ========================= */
 
-            margin-bottom: 30px;
-        }
+@media (max-height: 750px) {
 
-        .warning-icon {
-            flex-shrink: 0;
+    body {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
 
-            font-size: 30px;
+    .key-icon {
+        width: 72px;
+        height: 72px;
+        margin-bottom: 7px;
+    }
 
-            line-height: 1;
-        }
+    h1 {
+        font-size: 24px;
+    }
 
-        .warning-title {
-            color: var(--warning-title);
+    .subtitle {
+        margin-bottom: 12px;
+    }
 
-            font-size: 16px;
+    .progress-container {
+        margin-bottom: 12px;
+    }
 
-            font-weight: bold;
+    .circle {
+        width: 42px;
+        height: 42px;
+        min-width: 42px;
+    }
 
-            margin-bottom: 7px;
+    .card {
+        padding: 20px 25px;
+    }
 
-            letter-spacing: 1px;
-        }
+    .card-p {
+        margin-bottom: 12px;
+    }
 
-        .warning-text {
-            color: var(--warning-text);
+    .features {
+        margin-bottom: 14px;
+    }
 
-            font-size: 13px;
+    .features li {
+        margin-bottom: 7px;
+    }
 
-            line-height: 1.6;
+    .warning {
+        margin-bottom: 14px;
+        padding: 12px;
+    }
 
-            letter-spacing: 1px;
-        }
+    .btn {
+        padding: 13px;
+    }
+}
 
-        /* =========================
-           BUTTON
-        ========================= */
 
-        .btn {
-            width: 100%;
+/* =========================
+   MOBILE
+   ========================= */
 
-            padding: 16px;
+@media (max-width: 600px) {
 
-            border: none;
+    body {
+        padding-left: 35px;
+        padding-right: 35px;
+    }
 
-            border-radius: 15px;
+    .container {
+        max-width: 100%;
+    }
 
-            background: #00f985;
+    .key-icon {
+        width: 90px;
+        height: 90px;
+    }
 
-            color: #001b0d;
+    h1 {
+        font-size: 28px;
+    }
 
-            font-family: Arial, sans-serif;
+    .card {
+        padding: 27px 30px 25px;
+    }
+}
 
-            font-size: 16px;
 
-            font-weight: bold;
+/* VERY SMALL MOBILE */
+@media (max-width: 380px) {
 
-            letter-spacing: 0.5px;
+    body {
+        padding-left: 22px;
+        padding-right: 22px;
+    }
 
-            cursor: pointer;
+    .key-icon {
+        width: 80px;
+        height: 80px;
+    }
 
-            transition:
-                transform .2s ease,
-                background .2s ease,
-                box-shadow .2s ease;
-        }
+    h1 {
+        font-size: 25px;
+        letter-spacing: 3px;
+    }
 
-        .btn:hover {
-            background: #00ff91;
+    .card {
+        padding: 23px 24px;
+    }
 
-            transform: scale(1.01);
+    .card-p {
+        font-size: 13px;
+    }
 
-            box-shadow:
-                0 0 20px rgba(0,255,136,.25);
-        }
+    .features li {
+        font-size: 13px;
+    }
 
-        .btn:active {
-            transform: scale(.98);
-        }
+    .warning-text {
+        font-size: 11px;
+    }
+}
 
-        /* =========================
-           MOBILE
-        ========================= */
-
-        @media (max-width: 600px) {
-
-            body {
-                padding: 35px 35px 40px;
-            }
-
-            .key-icon {
-                width: 90px;
-                height: 90px;
-            }
-
-            h1 {
-                font-size: 28px;
-
-                letter-spacing: 4px;
-            }
-
-            .subtitle {
-                font-size: 14px;
-
-                margin-bottom: 32px;
-            }
-
-            .progress-container {
-                margin-bottom: 25px;
-            }
-
-            .circle {
-                width: 50px;
-                height: 50px;
-            }
-
-            .step-text {
-                font-size: 15px;
-
-                letter-spacing: 1px;
-            }
-
-            .line {
-                margin: 0 15px;
-            }
-
-            .card {
-                padding: 30px;
-
-                border-radius: 25px;
-            }
-
-            .card h2 {
-                font-size: 20px;
-            }
-
-            .card-p {
-                font-size: 15px;
-            }
-
-            .features li {
-                font-size: 15px;
-            }
-
-            .warning {
-                padding: 18px;
-            }
-
-            .warning-title {
-                font-size: 16px;
-            }
-
-            .warning-text {
-                font-size: 13px;
-            }
-
-            .btn {
-                font-size: 16px;
-
-                padding: 16px;
-            }
-        }
-
-        /* SMALL PHONES */
-        @media (max-width: 380px) {
-
-            body {
-                padding-left: 25px;
-                padding-right: 25px;
-            }
-
-            .card {
-                padding: 28px 24px;
-            }
-
-            h1 {
-                font-size: 26px;
-            }
-
-            .step-text {
-                font-size: 13px;
-            }
-
-            .line {
-                margin: 0 10px;
-            }
-        }
-    </style>
+</style>
 </head>
 
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <!-- YOUR LOGO -->
-        <div class="key-icon">
-            <img
-                src="./assets/logo.png"
-                alt="FARAZ PLAYZ">
-        </div>
-
-
-        <!-- YOUR NAME -->
-        <h1>FARAZ PLAYZ</h1>
-
-        <p class="subtitle">
-            GET YOUR KEY
-        </p>
+    <!-- YOUR LOGO -->
+    <div class="key-icon">
+        <img
+            src="./assets/logo.png"
+            alt="FARAZ PLAYZ">
+    </div>
 
 
-        <!-- STEP PROGRESS -->
-        <div class="progress-container">
+    <!-- YOUR NAME -->
+    <h1>FARAZ PLAYZ</h1>
 
-            <div class="step-indicator">
+    <p class="subtitle">
+        GET YOUR KEY
+    </p>
 
-                <div class="circle active">
-                    1
-                </div>
 
-                <span class="step-text">
-                    STEP 1 OF 1
-                </span>
+    <!-- STEP PROGRESS -->
+    <div class="progress-container">
 
+        <div class="step-indicator">
+
+            <div class="circle active">
+                1
             </div>
 
-
-            <div class="line"></div>
-
-
-            <div class="circle">
-                ✓
-            </div>
+            <span class="step-text">
+                STEP 1 OF 1
+            </span>
 
         </div>
 
+        <div class="line"></div>
 
-        <!-- MAIN CARD -->
-        <div class="card">
-
-            <h2>
-                Complete Step 1
-            </h2>
-
-
-            <p class="card-p">
-                Click the button below to continue.
-                Your key will be valid for 24 hours and
-                locked to your device.
-            </p>
-
-
-            <!-- FEATURES -->
-            <ul class="features">
-
-                <li>
-                    Valid for 24 hours
-                </li>
-
-                <li>
-                    1 verification step
-                </li>
-
-                <li>
-                    Device-locked key
-                </li>
-
-                <li>
-                    Auto-saved in app
-                </li>
-
-            </ul>
-
-
-            <!-- SECURITY NOTICE -->
-            <div class="warning">
-
-                <div class="warning-icon">
-                    ⚠️
-                </div>
-
-                <div>
-
-                    <div class="warning-title">
-                        Security Notice
-                    </div>
-
-                    <div class="warning-text">
-                        The use of bots or automation
-                        will result in your key being banned.
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- YOUR ORIGINAL REDIRECT -->
-            <button
-                class="btn"
-                onclick="location.href='https://vplink.in/2Fx6'">
-
-                CONTINUE TO STEP →
-
-            </button>
-
+        <div class="circle">
+            ✓
         </div>
 
     </div>
+
+
+    <!-- MAIN CARD -->
+    <div class="card">
+
+        <h2>
+            Complete Step 1
+        </h2>
+
+
+        <p class="card-p">
+            Click the button below to continue.
+            Your key will be valid for 24 hours and
+            locked to your device.
+        </p>
+
+
+        <!-- FEATURES -->
+        <ul class="features">
+
+            <li>
+                Valid for 24 hours
+            </li>
+
+            <li>
+                1 verification step
+            </li>
+
+            <li>
+                Device-locked key
+            </li>
+
+            <li>
+                Auto-saved in app
+            </li>
+
+        </ul>
+
+
+        <!-- SECURITY NOTICE -->
+        <div class="warning">
+
+            <div class="warning-icon">
+                ⚠️
+            </div>
+
+            <div>
+
+                <div class="warning-title">
+                    Security Notice
+                </div>
+
+                <div class="warning-text">
+                    The use of bots or automation
+                    will result in your key being banned.
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- SAME REDIRECT -->
+        <button
+            class="btn"
+            onclick="location.href='https://vplink.in/2Fx6'">
+
+            CONTINUE TO STEP →
+
+        </button>
+
+    </div>
+
+</div>
 
 </body>
 </html>
