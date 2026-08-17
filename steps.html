@@ -3,111 +3,556 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get a Free Key | Unknown Modz</title>
+    <title>FARAZ PLAYZ | Get Your Key</title>
+
     <style>
-        :root { --bg: #000000; --card: #121212; --text: #ffffff; --accent: #ffffff; --warning-bg: #1a1505; --warning-border: #3d3002; --warning-text: #eec136; }
-        
-        body { 
-            background-color: var(--bg); 
-            color: var(--text); 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            min-height: 100vh; 
-            margin: 0; 
-            padding: 20px;
+        :root {
+            --bg: #000000;
+            --card: #09150c;
+            --card-border: #1d6941;
+            --text: #00ff88;
+            --text-soft: #2d684b;
+            --line: #28784f;
+            --warning-bg: #1a1305;
+            --warning-border: #5b4707;
+            --warning-title: #ffd52a;
+            --warning-text: #836d27;
+        }
+
+        * {
             box-sizing: border-box;
         }
 
-        .container { 
-            width: 100%; 
-            max-width: 400px; 
-            text-align: center; 
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            min-height: 100%;
         }
 
-        /* --- LOGO FIX FOR PC & MOBILE --- */
-        .key-icon { 
-            background: #1a1a1a; 
-            width: 80px; 
-            height: 80px; 
-            border-radius: 50%; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            margin: 0 auto 15px; 
-            border: 1px solid #333; 
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family:
+                "Courier New",
+                Courier,
+                monospace;
+
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+
+            min-height: 100vh;
+            padding: 38px 18px 45px;
+
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            width: 280px;
+            height: 280px;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 255, 136, 0.06);
+            filter: blur(80px);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 620px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* LOGO */
+        .key-icon {
+            width: 154px;
+            height: 154px;
+            margin: 0 auto 25px;
+
+            border-radius: 50%;
             overflow: hidden;
-            box-shadow: 0 0 20px rgba(255,255,255,0.05);
+
+            border: 4px solid #00ff88;
+
+            background: #050505;
+
+            box-shadow:
+                0 0 10px rgba(0,255,136,.45),
+                0 0 30px rgba(0,255,136,.18),
+                inset 0 0 20px rgba(0,255,136,.08);
         }
 
         .key-icon img {
             width: 100%;
             height: 100%;
-            object-fit: cover; 
+            display: block;
+            object-fit: cover;
         }
 
-        @media (min-width: 768px) {
-            .container { max-width: 480px; }
-            .key-icon { width: 110px; height: 110px; } 
+        /* TITLE */
+        h1 {
+            margin: 0 0 12px;
+
+            color: #00ff88;
+
+            font-size: 42px;
+            line-height: 1.1;
+            font-weight: 700;
+            letter-spacing: 4px;
+
+            text-shadow:
+                0 0 8px rgba(0,255,136,.55),
+                0 0 22px rgba(0,255,136,.18);
         }
 
-        h1 { font-size: 28px; font-weight: bold; margin-bottom: 10px; }
-        .subtitle { color: #888; font-size: 14px; margin-bottom: 30px; }
-        
-        .progress-container { display: flex; align-items: center; justify-content: space-between; margin-bottom: 25px; }
-        .step-indicator { display: flex; align-items: center; gap: 8px; font-size: 13px; color: #888; }
-        .circle { width: 22px; height: 22px; border: 2px solid #333; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 10px; }
-        .circle.active { border-color: var(--text); color: var(--text); }
-        .line { flex-grow: 1; height: 2px; background: #222; margin: 0 15px; }
+        .subtitle {
+            margin: 0 0 45px;
 
-        .card { background: var(--card); border: 1px solid #222; border-radius: 24px; padding: 30px; text-align: left; box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
-        h2 { font-size: 20px; margin-bottom: 15px; }
-        .card-p { color: #888; font-size: 15px; line-height: 1.5; margin-bottom: 25px; }
+            color: #2d684b;
 
-        .warning { background: var(--warning-bg); border: 1px solid var(--warning-border); border-radius: 12px; padding: 15px; display: flex; gap: 12px; margin-bottom: 30px; }
-        .warning-icon { color: var(--warning-text); font-size: 18px; }
-        .warning-title { color: var(--warning-text); font-weight: bold; font-size: 14px; }
-        .warning-text { color: #8a701f; font-size: 12px; }
+            font-size: 17px;
+            letter-spacing: 4px;
+        }
 
-        .btn { width: 100%; padding: 16px; background: #ffffff; color: #000; border: none; border-radius: 14px; font-size: 16px; font-weight: bold; cursor: pointer; transition: 0.3s ease; }
-        .btn:hover { transform: scale(1.02); background: #00ff88; }
+        /* PROGRESS */
+        .progress-container {
+            width: 100%;
+
+            display: flex;
+            align-items: center;
+
+            margin-bottom: 35px;
+        }
+
+        .step-indicator {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+
+            white-space: nowrap;
+        }
+
+        .circle {
+            width: 50px;
+            height: 50px;
+
+            flex-shrink: 0;
+
+            border-radius: 50%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border: 3px solid #256b48;
+
+            color: #347c58;
+
+            font-size: 19px;
+
+            background: #050805;
+        }
+
+        .circle.active {
+            border-color: #00ff88;
+            color: #00ff88;
+
+            box-shadow:
+                0 0 10px rgba(0,255,136,.35),
+                0 0 25px rgba(0,255,136,.12);
+        }
+
+        .step-text {
+            color: #2f694e;
+            font-size: 17px;
+            letter-spacing: 2px;
+        }
+
+        .line {
+            flex: 1;
+
+            height: 3px;
+
+            background: #28784f;
+
+            margin: 0 25px;
+
+            box-shadow: 0 0 8px rgba(0,255,136,.08);
+        }
+
+        /* CARD */
+        .card {
+            width: 100%;
+
+            background: var(--card);
+
+            border: 1px solid var(--card-border);
+
+            border-radius: 28px;
+
+            padding: 42px 42px 38px;
+
+            text-align: left;
+
+            box-shadow:
+                0 0 25px rgba(0,255,136,.05),
+                0 15px 50px rgba(0,0,0,.7);
+
+            position: relative;
+        }
+
+        .card h2 {
+            margin: 0 0 22px;
+
+            color: #00ff88;
+
+            font-size: 30px;
+            line-height: 1.2;
+
+            letter-spacing: 1px;
+
+            text-shadow:
+                0 0 8px rgba(0,255,136,.25);
+        }
+
+        .card-p {
+            margin: 0 0 30px;
+
+            color: #2f684c;
+
+            font-size: 17px;
+            line-height: 1.8;
+
+            letter-spacing: 1px;
+        }
+
+        /* FEATURES */
+        .features {
+            margin: 0 0 32px;
+            padding: 0;
+
+            list-style: none;
+        }
+
+        .features li {
+            display: flex;
+            align-items: center;
+
+            margin: 0 0 20px;
+
+            color: #2f704f;
+
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .features li:last-child {
+            margin-bottom: 0;
+        }
+
+        .features li::before {
+            content: "➜";
+
+            color: #00ff88;
+
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+
+            margin-right: 20px;
+
+            text-shadow:
+                0 0 8px rgba(0,255,136,.4);
+        }
+
+        /* WARNING */
+        .warning {
+            background: var(--warning-bg);
+
+            border: 1px solid var(--warning-border);
+
+            border-radius: 18px;
+
+            padding: 22px;
+
+            display: flex;
+            align-items: flex-start;
+
+            gap: 18px;
+
+            margin-bottom: 35px;
+        }
+
+        .warning-icon {
+            flex-shrink: 0;
+
+            font-size: 34px;
+            line-height: 1;
+        }
+
+        .warning-title {
+            color: var(--warning-title);
+
+            font-size: 17px;
+            font-weight: bold;
+
+            margin-bottom: 8px;
+
+            letter-spacing: 1px;
+        }
+
+        .warning-text {
+            color: var(--warning-text);
+
+            font-size: 14px;
+            line-height: 1.6;
+
+            letter-spacing: 1px;
+        }
+
+        /* BUTTON */
+        .btn {
+            width: 100%;
+
+            padding: 20px 25px;
+
+            border: none;
+            border-radius: 18px;
+
+            background: #00f985;
+
+            color: #001b0d;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 19px;
+            font-weight: 800;
+
+            letter-spacing: 1px;
+
+            cursor: pointer;
+
+            transition:
+                transform .2s ease,
+                box-shadow .2s ease,
+                background .2s ease;
+
+            box-shadow:
+                0 0 18px rgba(0,255,136,.15);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+
+            background: #00ff91;
+
+            box-shadow:
+                0 0 25px rgba(0,255,136,.35);
+        }
+
+        .btn:active {
+            transform: scale(.98);
+        }
+
+        /* MOBILE */
+        @media (max-width: 600px) {
+
+            body {
+                padding: 35px 18px 40px;
+            }
+
+            .container {
+                max-width: 100%;
+            }
+
+            .key-icon {
+                width: 154px;
+                height: 154px;
+                margin-bottom: 25px;
+            }
+
+            h1 {
+                font-size: 30px;
+                letter-spacing: 3px;
+            }
+
+            .subtitle {
+                font-size: 13px;
+                letter-spacing: 2px;
+                margin-bottom: 38px;
+            }
+
+            .progress-container {
+                margin-bottom: 30px;
+            }
+
+            .circle {
+                width: 49px;
+                height: 49px;
+            }
+
+            .step-text {
+                font-size: 15px;
+                letter-spacing: 1px;
+            }
+
+            .line {
+                margin: 0 15px;
+            }
+
+            .card {
+                padding: 38px 32px 34px;
+                border-radius: 28px;
+            }
+
+            .card h2 {
+                font-size: 28px;
+            }
+
+            .card-p {
+                font-size: 16px;
+                line-height: 1.8;
+            }
+
+            .features li {
+                font-size: 15px;
+            }
+
+            .warning {
+                padding: 20px;
+                gap: 15px;
+            }
+
+            .warning-title {
+                font-size: 16px;
+            }
+
+            .warning-text {
+                font-size: 13px;
+            }
+
+            .btn {
+                font-size: 17px;
+                padding: 20px 15px;
+            }
+        }
+
+        @media (max-width: 380px) {
+
+            .card {
+                padding: 30px 23px;
+            }
+
+            h1 {
+                font-size: 27px;
+            }
+
+            .step-text {
+                font-size: 13px;
+            }
+
+            .line {
+                margin: 0 10px;
+            }
+        }
     </style>
 </head>
+
 <body>
 
 <div class="container">
-    <div class="key-icon">
-        <img src="./assets/logo.png" alt="UKM">
-    </div>
-    <h1>Get a Free Key</h1>
-    <p class="subtitle">Complete the step below to receive your access key.</p>
 
+    <!-- YOUR LOGO -->
+    <div class="key-icon">
+        <img src="./assets/logo.png" alt="FARAZ PLAYZ">
+    </div>
+
+    <!-- YOUR NAME -->
+    <h1>FARAZ PLAYZ</h1>
+
+    <p class="subtitle">GET YOUR KEY</p>
+
+
+    <!-- STEP PROGRESS -->
     <div class="progress-container">
+
         <div class="step-indicator">
             <div class="circle active">1</div>
-            <span>Step 1 of 1</span>
+            <span class="step-text">STEP 1 OF 1</span>
         </div>
+
         <div class="line"></div>
-        <div class="circle" style="background: #111;"></div>
+
+        <div class="circle">✓</div>
+
     </div>
 
-    <div class="card">
-        <h2>First Step</h2>
-        <p class="card-p">To continue, click the button below to complete the first step. You will be redirected and then return to this page once finished.</p>
 
+    <!-- MAIN CARD -->
+    <div class="card">
+
+        <h2>Complete Step 1</h2>
+
+        <p class="card-p">
+            Click the button below to continue.
+            Your key will be valid for 24 hours and
+            locked to your device.
+        </p>
+
+
+        <!-- FEATURES -->
+        <ul class="features">
+
+            <li>Valid for 24 hours</li>
+
+            <li>1 verification step</li>
+
+            <li>Device-locked key</li>
+
+            <li>Auto-saved in app</li>
+
+        </ul>
+
+
+        <!-- SECURITY WARNING -->
         <div class="warning">
+
             <div class="warning-icon">⚠️</div>
+
             <div>
-                <div class="warning-title">Security Notice</div>
-                <div class="warning-text">The use of bots or any kind of automation will result in your key being banned.</div>
+
+                <div class="warning-title">
+                    Security Notice
+                </div>
+
+                <div class="warning-text">
+                    The use of bots or automation
+                    will result in your key being banned.
+                </div>
+
             </div>
+
         </div>
 
-        <button class="btn" onclick="location.href='https://vplink.in/2Fx6'">
-            Continue to Step ➜
+
+        <!-- ORIGINAL LINK -->
+        <button
+            class="btn"
+            onclick="location.href='https://vplink.in/2Fx6'">
+
+            CONTINUE TO STEP →
+
         </button>
+
     </div>
+
 </div>
 
 </body>
